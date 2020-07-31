@@ -1,0 +1,35 @@
+
+
+server:
+  port: 9190
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/rant_car_db?createDatabaseIfNotExist=true
+    username: root
+    password: Supun@123
+
+
+  # Hibernate ddl auto (create, create-drop, validate, update)
+  #  physical-strategy is used to change first_name --> firstName in database columns
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
+
+security:
+  oauth2:
+    resource:
+      token-info-uri: http://localhost:9191/oauth/check_token
+    client:
+      client-id: mobile
+      client-secret: pin
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+
